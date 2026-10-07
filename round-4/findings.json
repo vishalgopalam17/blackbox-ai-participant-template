@@ -1,17 +1,83 @@
 {
   "round": "round-4",
-  "team": "BB-XXX",
-  "queries_used": 0,
+  "team": "BB-032",
+  "queries_used": 50,
   "claims": [
     {
       "type": "feature_effect",
-      "feature": "x1",
-      "direction": "increases",
+      "feature": "x5",
+      "direction": "decreases",
       "strength": "strong",
-      "confidence": 0.0,
+      "confidence": 0.95,
       "evidence": {
-        "query_ids": [],
-        "summary": "Replace this example claim with your own. Every claim needs evidence."
+        "query_ids": [38, 39, 17, 18],
+        "summary": "Increasing history_score while keeping the other major inputs nearly unchanged consistently lowers the GK-05 score. Query 39 has history_score 350 and score 0.9911, while query 38 has history_score 500 and score 0.9842. Query 18 has history_score 500 and score 0.9597, while query 17 has history_score 700 and score 0.9317."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x6",
+      "direction": "decreases",
+      "strength": "moderate",
+      "confidence": 0.90,
+      "evidence": {
+        "query_ids": [32, 36, 37],
+        "summary": "Increasing linked_badges is associated with a lower score. With the main inputs held constant, score changes from 0.9842 at 18 linked badges to 0.9833 at 19 and 0.9796 at 20."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x7",
+      "direction": "decreases",
+      "strength": "moderate",
+      "confidence": 0.85,
+      "evidence": {
+        "query_ids": [20, 21],
+        "summary": "Adding recent denials lowers the score. Query 21 has recent_denials 0 and score 0.9714, while query 20 has recent_denials 2 and score 0.9663 with the other listed inputs unchanged."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x8",
+      "direction": "decreases",
+      "strength": "strong",
+      "confidence": 0.95,
+      "evidence": {
+        "query_ids": [31, 32, 33, 34, 35, 25],
+        "summary": "Higher requested_zone is associated with lower score. Queries 31-35 show scores decreasing as requested_zone rises from 35 to 39. Query 25 further drops to 0.9561 at requested_zone 50 compared with 0.9822 at zone 40 in query 26."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x9",
+      "direction": "site_dependent",
+      "strength": "strong",
+      "confidence": 0.95,
+      "evidence": {
+        "query_ids": [3, 4, 5, 6],
+        "summary": "Site has a strong effect on the score. For otherwise identical queries, site A gives 0.4335, site B gives 0.0320, site C gives 0.4375, and site D gives 0.4415. Site B is substantially lower than the other observed sites."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x2",
+      "direction": "decreases",
+      "strength": "moderate",
+      "confidence": 0.75,
+      "evidence": {
+        "query_ids": [21, 22],
+        "summary": "Increasing badge_age_days from 25 to 45 lowers the score from 0.9714 to 0.9637 while the other listed inputs remain unchanged."
+      }
+    },
+    {
+      "type": "feature_effect",
+      "feature": "x4",
+      "direction": "weak_or_uncertain",
+      "strength": "weak",
+      "confidence": 0.60,
+      "evidence": {
+        "query_ids": [9, 10, 11],
+        "summary": "Changing escorts between 5 and 6 produces little or no score change in the observed high-risk cases: queries 9 and 10 both have score 0.3225 and 0.3538 respectively, while queries 10 and 11 have identical score 0.3538 despite escorts changing from 6 to 5."
       }
     }
   ]
